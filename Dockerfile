@@ -1,3 +1,4 @@
-FROM alpine:3.5
-RUN apk add -U valgrind
+FROM debian:jessie
+RUN apt-get update && \
+    apt-get install -y valgrind
 COPY bin/rdkafka-example /bin/rdkafka-example
