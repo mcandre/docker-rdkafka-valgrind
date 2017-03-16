@@ -106,7 +106,7 @@ $ crosscompile/build.sh
 $ crosscompile/compile.sh
 
 $ file bin/rdkafka-example 
-bin/rdkafka-example: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 2.6.32, BuildID[sha1]=186bd83b5846d9deda325c6481689fb2fbf722b1, not stripped
+bin/rdkafka-example: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 2.6.32, BuildID[sha1]=f3e38481e4c42fa0126fb192a331b14aa949dd69, not stripped
 
 $ ./build.sh
 ```
