@@ -4,80 +4,14 @@
 
 ```console
 
-$ docker run -it mcandre/docker-rdkafka-valgrind /bin/rdkafka-example
+$ docker run mcandre/docker-rdkafka-valgrind /bin/rdkafka-example
 $
 
-$ docker run -it mcandre/docker-rdkafka-valgrind valgrind --track-origins=yes /bin/rdkafka-example
+$ docker run mcandre/docker-rdkafka-valgrind
 ==1== Memcheck, a memory error detector
 ==1== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
 ==1== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
 ==1== Command: /bin/rdkafka-example
-==1== 
-==1== Syscall param set_robust_list(head) points to uninitialised byte(s)
-==1==    at 0x4803BF: __pthread_initialize_minimal (nptl-init.c:358)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1==  Address 0x4001bb0 is not stack'd, malloc'd or (recently) free'd
-==1==  Uninitialised value was created
-==1==    at 0x509B5C: brk (in /bin/rdkafka-example)
-==1==    by 0x4D5F64: sbrk (in /bin/rdkafka-example)
-==1==    by 0x485AE3: __libc_setup_tls (in /bin/rdkafka-example)
-==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1== 
-==1== Conditional jump or move depends on uninitialised value(s)
-==1==    at 0x4D8676: __register_atfork (in /bin/rdkafka-example)
-==1==    by 0x4D8798: __libc_pthread_init (in /bin/rdkafka-example)
-==1==    by 0x480596: __pthread_initialize_minimal (nptl-init.c:456)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1==  Uninitialised value was created
-==1==    at 0x509B5C: brk (in /bin/rdkafka-example)
-==1==    by 0x4D5F64: sbrk (in /bin/rdkafka-example)
-==1==    by 0x485AE3: __libc_setup_tls (in /bin/rdkafka-example)
-==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1== 
-==1== Conditional jump or move depends on uninitialised value(s)
-==1==    at 0x4D8726: __linkin_atfork (in /bin/rdkafka-example)
-==1==    by 0x498363: ptmalloc_init.part.7 (in /bin/rdkafka-example)
-==1==    by 0x4986AD: malloc_hook_ini (in /bin/rdkafka-example)
-==1==    by 0x513F02: _dl_get_origin (in /bin/rdkafka-example)
-==1==    by 0x4E1B9E: _dl_non_dynamic_init (in /bin/rdkafka-example)
-==1==    by 0x4E2D17: __libc_init_first (in /bin/rdkafka-example)
-==1==    by 0x4857C5: (below main) (in /bin/rdkafka-example)
-==1==  Uninitialised value was created
-==1==    at 0x509B5C: brk (in /bin/rdkafka-example)
-==1==    by 0x4D5F64: sbrk (in /bin/rdkafka-example)
-==1==    by 0x485AE3: __libc_setup_tls (in /bin/rdkafka-example)
-==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1== 
-==1== Conditional jump or move depends on uninitialised value(s)
-==1==    at 0x4946D9: _int_free (in /bin/rdkafka-example)
-==1==    by 0x50DFCC: fillin_rpath (in /bin/rdkafka-example)
-==1==    by 0x50E5D2: _dl_init_paths (in /bin/rdkafka-example)
-==1==    by 0x4E2074: _dl_non_dynamic_init (in /bin/rdkafka-example)
-==1==    by 0x4E2D17: __libc_init_first (in /bin/rdkafka-example)
-==1==    by 0x4857C5: (below main) (in /bin/rdkafka-example)
-==1==  Uninitialised value was created
-==1==    at 0x509B5C: brk (in /bin/rdkafka-example)
-==1==    by 0x4D5F64: sbrk (in /bin/rdkafka-example)
-==1==    by 0x485AE3: __libc_setup_tls (in /bin/rdkafka-example)
-==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
-==1== 
-==1== Conditional jump or move depends on uninitialised value(s)
-==1==    at 0x49473F: _int_free (in /bin/rdkafka-example)
-==1==    by 0x50DFCC: fillin_rpath (in /bin/rdkafka-example)
-==1==    by 0x50E5D2: _dl_init_paths (in /bin/rdkafka-example)
-==1==    by 0x4E2074: _dl_non_dynamic_init (in /bin/rdkafka-example)
-==1==    by 0x4E2D17: __libc_init_first (in /bin/rdkafka-example)
-==1==    by 0x4857C5: (below main) (in /bin/rdkafka-example)
-==1==  Uninitialised value was created
-==1==    at 0x509B5C: brk (in /bin/rdkafka-example)
-==1==    by 0x4D5F64: sbrk (in /bin/rdkafka-example)
-==1==    by 0x485AE3: __libc_setup_tls (in /bin/rdkafka-example)
-==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
-==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
 ==1== 
 ==1== Conditional jump or move depends on uninitialised value(s)
 ==1==    at 0x49530F: _int_malloc (in /bin/rdkafka-example)
@@ -95,6 +29,18 @@ $ docker run -it mcandre/docker-rdkafka-valgrind valgrind --track-origins=yes /b
 ==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
 ==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
 ==1== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_malloc
+   fun:malloc
+   fun:strdup
+   fun:rd_strdup
+   fun:rd_kafka_anyconf_set_prop0.isra.2
+   fun:rd_kafka_defaultconf_set
+   fun:rd_kafka_conf_new
+   fun:main
+}
 ==1== Conditional jump or move depends on uninitialised value(s)
 ==1==    at 0x4946D9: _int_free (in /bin/rdkafka-example)
 ==1==    by 0x403C1E: rd_free (rd.h:99)
@@ -110,6 +56,17 @@ $ docker run -it mcandre/docker-rdkafka-valgrind valgrind --track-origins=yes /b
 ==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
 ==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
 ==1== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_free
+   fun:rd_free
+   fun:rd_kafkap_str_destroy
+   fun:rd_kafka_anyconf_clear
+   fun:rd_kafka_anyconf_destroy
+   fun:rd_kafka_conf_destroy
+   fun:main
+}
 ==1== Conditional jump or move depends on uninitialised value(s)
 ==1==    at 0x49473F: _int_free (in /bin/rdkafka-example)
 ==1==    by 0x403C1E: rd_free (rd.h:99)
@@ -125,6 +82,17 @@ $ docker run -it mcandre/docker-rdkafka-valgrind valgrind --track-origins=yes /b
 ==1==    by 0x480346: __pthread_initialize_minimal (nptl-init.c:285)
 ==1==    by 0x48577D: (below main) (in /bin/rdkafka-example)
 ==1== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_free
+   fun:rd_free
+   fun:rd_kafkap_str_destroy
+   fun:rd_kafka_anyconf_clear
+   fun:rd_kafka_anyconf_destroy
+   fun:rd_kafka_conf_destroy
+   fun:main
+}
 ==1== 
 ==1== HEAP SUMMARY:
 ==1==     in use at exit: 0 bytes in 0 blocks
@@ -133,13 +101,13 @@ $ docker run -it mcandre/docker-rdkafka-valgrind valgrind --track-origins=yes /b
 ==1== All heap blocks were freed -- no leaks are possible
 ==1== 
 ==1== For counts of detected and suppressed errors, rerun with: -v
-==1== ERROR SUMMARY: 14 errors from 8 contexts (suppressed: 0 from 0)
+==1== ERROR SUMMARY: 9 errors from 3 contexts (suppressed: 5 from 5)
 ```
 
 # REQUIREMENTS
 
 * [Docker](https://www.docker.com)
-* [gcc](https://gcc.gnu.org)
+* [g++](https://gcc.gnu.org)
 
 ## Optional
 

@@ -1,0 +1,36 @@
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Param
+   set_robust_list(head)
+   fun:__pthread_initialize_minimal
+   fun:(below main)
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:__register_atfork
+   fun:__libc_pthread_init
+   fun:__pthread_initialize_minimal
+   fun:(below main)
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:__linkin_atfork
+   fun:ptmalloc_init.part.7
+   fun:malloc_hook_ini
+   fun:_dl_get_origin
+   fun:_dl_non_dynamic_init
+   fun:__libc_init_first
+   fun:(below main)
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_free
+   fun:fillin_rpath
+   fun:_dl_init_paths
+   fun:_dl_non_dynamic_init
+   fun:__libc_init_first
+   fun:(below main)
+}
