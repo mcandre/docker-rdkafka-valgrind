@@ -34,3 +34,96 @@
    fun:__libc_init_first
    fun:(below main)
 }
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:start_thread
+   fun:clone
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_malloc
+   fun:malloc
+   fun:rd_malloc
+   fun:rd_kafkap_str_new
+   fun:rd_kafka_anyconf_set_prop0.isra.2
+   fun:rd_kafka_anyconf_copy
+   fun:rd_kafka_conf_dup
+   fun:rd_kafka_new
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_malloc
+   fun:malloc
+   fun:strdup
+   fun:rd_strdup
+   fun:rd_kafka_anyconf_set_prop0.isra.2
+   fun:rd_kafka_defaultconf_set
+   fun:rd_kafka_conf_new
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_free
+   fun:rd_free
+   fun:rd_kafka_anyconf_set_prop0.isra.2
+   fun:rd_kafka_anyconf_copy
+   fun:rd_kafka_conf_dup
+   fun:rd_kafka_new
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_int_free
+   fun:rd_free
+   fun:rd_kafkap_str_destroy
+   fun:rd_kafka_anyconf_set_prop0.isra.2
+   fun:rd_kafka_anyconf_copy
+   fun:rd_kafka_conf_dup
+   fun:rd_kafka_new
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:malloc_consolidate
+   fun:_int_malloc
+   fun:calloc
+   fun:rd_calloc
+   fun:rd_kafka_new
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:__pthread_disable_asynccancel
+   fun:pthread_join
+   fun:thrd_join
+   fun:rd_kafka_destroy_app
+   fun:rd_kafka_destroy
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:__pthread_enable_asynccancel
+   fun:pthread_join
+   fun:thrd_join
+   fun:rd_kafka_destroy_app
+   fun:rd_kafka_destroy
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:pthread_join
+   fun:thrd_join
+   fun:rd_kafka_destroy_app
+   fun:rd_kafka_destroy
+   fun:main
+}
